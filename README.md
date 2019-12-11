@@ -256,10 +256,10 @@ var result = await heos_lib.playPresetStation (pid, preset)
 var { pid, preset } = result
 ```
 
-### payInputSource
+### playInputSource
 
 ```js
-var input_name = 'input/hdradio' // see HEOS specification
+var input_name = 'inputs/hdradio' // see HEOS specification
 var result = await heos_lib.playInputSource (pid, input_name)
 var { pid, input } = result
 ```
@@ -269,7 +269,7 @@ var { pid, input } = result
 ```js
 var input_name = 'input/hdradio' // see HEOS specification
 var result = await heos_lib
-  .playInputSource (pid, spid, input_name)
+  .playInputSourceFrom (pid, spid, input_name)
 var { pid, spid, input } = result
 ```
 
@@ -401,3 +401,11 @@ Receives all results
 
 Receives results for a specified command
 
+## Links
+
+* [HEOS by Denon](https://usa.denon.com/us/heos)
+* [HEOS CLI Protocol Specification](https://denon-uk.custhelp.com/app/answers/detail/a_id/5744/~/heos-control-protocol-\(cli\))
+
+# Notice
+
+This unsponsored software is provided, subject to a MIT license, unoffocially and independently of Sound United, LLC, its affiliates, subsidiaries and brands (such as HEOS, Denon and any such not listed here).
