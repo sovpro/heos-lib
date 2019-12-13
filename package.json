@@ -1,6 +1,6 @@
 {
   "name": "heos-lib",
-  "version": "0.1.0-beta.5",
+  "version": "1.0.0",
   "description": "A Node.js library for HEOS device interaction",
   "main": "heos-lib.js",
   "scripts": {
@@ -18,6 +18,6 @@
   "author": "sovpro <its.so@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "heos-stream": "0.1.0-beta.2"
+    "heos-stream": "^1.0.0"
   }
 }

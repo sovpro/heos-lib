@@ -10,6 +10,12 @@ The constructor requires a socket as can be acquired with `net.createConnection 
 const heos_lib = new HeosLib (socket)
 ```
 
+A timeout for command results may be specified as a 'timeout' property on an optional configuration parameter. The value should be set in milliseconds. By default the timeout is set to 5000 (5 seconds).
+
+```js
+const heos_lib = new HeosLib (socket, {timeout: 10000})
+```
+
 ## Methods
 
 ### registerForChangeEvents
@@ -408,4 +414,4 @@ Receives results for a specified command
 
 # Notice
 
-This unsponsored software is provided, subject to a MIT license, unoffocially and independently of Sound United, LLC, its affiliates, subsidiaries and brands (such as HEOS, Denon and any such not listed here).
+This unsponsored software is provided, subject to a MIT license, unofficially and independently of Sound United, LLC, its affiliates, subsidiaries and brands (such as HEOS, Denon and any such not listed here).
