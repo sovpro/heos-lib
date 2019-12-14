@@ -1,6 +1,6 @@
 {
   "name": "heos-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Node.js library for HEOS device interaction",
   "main": "heos-lib.js",
   "scripts": {

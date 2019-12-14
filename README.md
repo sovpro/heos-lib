@@ -10,7 +10,7 @@ The constructor requires a socket as can be acquired with `net.createConnection 
 const heos_lib = new HeosLib (socket)
 ```
 
-A timeout for command results may be specified as a 'timeout' property on an optional configuration parameter. The value should be set in milliseconds. By default the timeout is set to 5000 (5 seconds).
+A timeout for command results may be specified as a `timeout` property on an optional configuration parameter. The value should be set in milliseconds. By default the timeout is set to 5000 (5 seconds).
 
 ```js
 const heos_lib = new HeosLib (socket, {timeout: 10000})
@@ -376,14 +376,16 @@ Options that require 'cid', 'mid' or 'name' are currently not supported by the s
 
 ### command
 
-Send a direct command
+Send a direct command:
 
 ```js
 heos_lib.command ({
   command: 'player/get_volume',
-  param:   { pid: 1234567890 }
+  params:  { pid: 1234567890 }
 })
 ```
+
+Currently, the `command` method does not directly return a value. The result can be obtained with an event listener.
 
 ## Events
 
