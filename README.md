@@ -28,7 +28,7 @@ var { enable } = result
 
 ### checkAccount
 
-```
+```js
 var result = await heos_lib
   .checkAccount ()
 var { un } = result
@@ -40,7 +40,7 @@ if (un) {
 
 ### signIn
 
-```
+```js
 var username = '[username value]'
 var password = '[password value]'
 try {
@@ -55,7 +55,7 @@ catch (error) {
 
 ### signOut
 
-```
+```js
 try {
   await heos_lib.signOut ()
 }
@@ -66,7 +66,7 @@ catch (error) {
 
 ### heartBeat
 
-```
+```js
 try {
   await heos_lib.heartBeat ()
 }
