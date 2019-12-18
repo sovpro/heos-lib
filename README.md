@@ -26,6 +26,55 @@ var result = await heos_lib
 var { enable } = result
 ```
 
+### checkAccount
+
+```
+var result = await heos_lib
+  .checkAccount ()
+var { un } = result
+if (un) {
+  // 'un' is defined if user is signed-in
+  console.log ('Signed-in as ' + un)
+}
+```
+
+### signIn
+
+```
+var username = '[username value]'
+var password = '[password value]'
+try {
+  await heos_lib.signIn (username, password)
+  console.log ('Sign-in success')
+}
+catch (error) {
+  // error message might be 'Invalid credentials'
+  console.log ('Sign-in error: ' + error.message)
+}
+```
+
+### signOut
+
+```
+try {
+  await heos_lib.signOut ()
+}
+catch (error) {
+  console.log ('Sign-out error: ' + error.message)
+}
+```
+
+### heartBeat
+
+```
+try {
+  await heos_lib.heartBeat ()
+}
+catch (error) {
+  console.log ('Heart beat error: ' + error.message)
+}
+```
+
 ### getPlayers
 
 ```js
