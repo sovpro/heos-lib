@@ -18,7 +18,7 @@ const heos_lib = new HeosLib (socket, {timeout: 10000})
 
 ## Methods
 
-There are a number of [Recurring Method Parameters](#recurring-method-parameters)
+There are a number of [recurring method parameters](#recurring-method-parameters)
 
 A list of methods:
 - [Register for Change Events](#registerforchangeevents)
@@ -68,7 +68,7 @@ A list of methods:
 - [Set Service Option](#setserviceoption)
 - [Command](#command)
 
-### Recurring method parameters
+### Recurring Method Parameters
 
 - *pid* - [Player Identifier](#player-identifier)
 - *sid* - [Source Identifier](#source-identifier)
@@ -83,19 +83,19 @@ A list of methods:
 
 #### Player Identifier
 
-A **pid** property value of an item returned by [getPlayers](#getplayers)
+A **pid** property value of an item returned by [getPlayers](#getplayers). _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### Source Identifier
 
-A **sid** property value of an item returned by [getMusicSources](#getmusicsources), [browseSource](#browsesource)
+A **sid** property value of an item returned by [getMusicSources](#getmusicsources), [browseSource](#browsesource). _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### Container Identifier
 
-A **cid** property value of an item returned by [browseSource](#browsesource), [browseSourceContainers](#browsesourcecontainers), [browseSearch](#browsesearch).
+A **cid** property value of an item returned by [browseSource](#browsesource), [browseSourceContainers](#browsesourcecontainers), [browseSearch](#browsesearch). _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### Search Criteria Identifier
 
-A **scid** property value of an item returned by [getSourceSearchCriteria](#getsourcesearchcriteria).
+A **scid** property value of an item returned by [getSourceSearchCriteria](#getsourcesearchcriteria). _[^ recurring method parameters](#recurring-method-parameters)_
 
 Static constants are available for:
 
@@ -107,11 +107,11 @@ Static constants are available for:
 6. HeosLib.SEARCH_CRITERIA_PLAYLIST
 7. HeosLib.SEARCH_CRITERIA_ACCOUNTS
 
-Identifiers that can be used vary by source. Identifiers other than provided by the static contants may be available depending on the music source. See [HEOS CLI Protocol Specification](#links)
+Identifiers that can be used vary by source. Identifiers other than provided by the static contants may be available depending on the music source. See [HEOS CLI Protocol Specification](#links). _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### Media Identifier
 
-A **mid** property value of an item returned by [browseSourceContainers](#browsesourcecontainers), [browseSearch](#browsesearch)
+A **mid** property value of an item returned by [browseSourceContainers](#browsesourcecontainers), [browseSearch](#browsesearch). _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### Add Criteria Identifier
 
@@ -122,21 +122,23 @@ A value available as static constants:
 3. HeosLib.QUEUE_PLAY_LAST
 4. HeosLib.QUEUE_REPLACE_AND_PLAY
 
+_[^ recurring method parameters](#recurring-method-parameters)_
+
 #### Queue Item Identifier
 
-A **qid** property value on an item returned by [getQueue](#getqueue).
+A **qid** property value on an item returned by [getQueue](#getqueue).. _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### Range Specifier
 
-A comma separated pair of start and end paging index values; inclusive (e.g. '0,9')
+A comma separated pair of start and end paging index values; inclusive (e.g. '0,9'). _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### On Off State
 
-A value of **on** or **off**
+A value of **on** or **off**. _[^ recurring method parameters](#recurring-method-parameters)_
 
 #### Input Name
 
-An input name from 4.4.9 of the [HEOS CLI Protocol Specification](#links) v1.13
+An input name from 4.4.9 of the [HEOS CLI Protocol Specification](#links) v1.13. _[^ recurring method parameters](#recurring-method-parameters)_
 
 ### registerForChangeEvents
 
@@ -145,7 +147,7 @@ var result = await heos_lib
   .registerForChangeEvents (onoff)
 var { enable } = result
 ```
-_See 4.1.1 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.1.1 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 registerForChangeEvents parameters:
 * [On Off State](#on-off-state)
@@ -161,7 +163,7 @@ if (un) {
   console.log ('Signed-in as ' + un)
 }
 ```
-_See 4.1.2 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.1.2 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 ### signIn
 
@@ -175,7 +177,7 @@ catch (error) {
   console.log ('Sign-in error: ' + error.message)
 }
 ```
-_See 4.1.3 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.1.3 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 signIn parameters:
 * *username*
@@ -191,7 +193,7 @@ catch (error) {
   console.log ('Sign-out error: ' + error.message)
 }
 ```
-_See 4.1.4 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.1.4 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 ### heartBeat
 
@@ -203,7 +205,7 @@ catch (error) {
   console.log ('Heart beat error: ' + error.message)
 }
 ```
-_See 4.1.5 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.1.5 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 ### getPlayers
 
@@ -211,7 +213,7 @@ _See 4.1.5 in [HEOS CLI Protocol Specification](#links) v1.13_
 var [ player_info ] = await heos_lib.getPlayers ()
 var { name, pid, model, version } = player_info
 ```
-_See 4.2.1 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.1 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 ### getPlayerInfo
 
@@ -219,7 +221,7 @@ _See 4.2.1 in [HEOS CLI Protocol Specification](#links) v1.13_
 var player_info = await heos_lib.getPlayerInfo (pid)
 var { name, pid, model, version } = player_info
 ```
-_See 4.2.2 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.2 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getPlayerInfo parameters:
 * [Player Identifier](#player-identifier)
@@ -230,7 +232,7 @@ getPlayerInfo parameters:
 var play_state = await heos_lib.getPlayState (pid)
 var { state } = play_state
 ```
-_See 4.2.3 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.3 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getPlayState parameters:
 * [Player Identifier](#player-identifier)
@@ -242,7 +244,7 @@ var result = await heos_lib
   .setPlayState (pid, state)
 var { pid, state } = result
 ```
-_See 4.2.4 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.4 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 setPlayState parameters:
 * [Player Identifier](#player-identifier)
@@ -255,7 +257,7 @@ var now_playing = await heos_lib
   .getNowPlayingMedia (pid)
 var { type, song, artist } = now_playing
 ```
-_See 4.2.5 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.5 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getNowPlayingMedia parameters:
 * [Player Identifier](#player-identifier)
@@ -265,7 +267,7 @@ getNowPlayingMedia parameters:
 ```js
 var { pid, level } = await heos_lib.getVolume (pid)
 ```
-_See 4.2.6 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.6 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getVolume parameters:
 * [Player Identifier](#player-identifier)
@@ -276,7 +278,7 @@ getVolume parameters:
 var result = await heos_lib.setVolume (pid, level)
 var { pid, level } = result
 ```
-_See 4.2.7 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.7 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 setVolume parameters:
 * [Player Identifier](#player-identifier)
@@ -288,7 +290,7 @@ setVolume parameters:
 var result = await heos_lib.volumeUp (pid, step)
 var { pid, step } = result
 ```
-_See 4.2.8 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.8 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 volumeUp parameters:
 * [Player Identifier](#player-identifier)
@@ -300,7 +302,7 @@ volumeUp parameters:
 var result = await heos_lib.volumeDown (pid, step)
 var { pid, step } = result
 ```
-_See 4.2.9 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.9 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 volumeDown parameters:
 * [Player Identifier](#player-identifier)
@@ -311,7 +313,7 @@ volumeDown parameters:
 ```js
 var { pid, state } = await heos_lib.getMute (pid)
 ```
-_See 4.2.10 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.10 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getMute parameters:
 * [Player Identifier](#player-identifier)
@@ -322,7 +324,7 @@ getMute parameters:
 var result = await heos_lib.setMute (pid, onoff)
 var { pid, state } = result
 ```
-_See 4.2.11 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.11 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 setMute parameters:
 * [Player Identifier](#player-identifier)
@@ -334,7 +336,7 @@ setMute parameters:
 var result = await heos_lib.toggleMute (pid)
 var { pid } = result
 ```
-_See 4.2.12 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.12 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 toggleMute parameters:
 * [Player Identifier](#player-identifier)
@@ -345,7 +347,7 @@ toggleMute parameters:
 var play_mode = await heos_lib.getPlayMode (pid)
 var { pid, repeat, shuffle } = play_mode
 ```
-_See 4.2.13 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.13 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getPlayMode parameters:
 * [Player Identifier](#player-identifier)
@@ -357,7 +359,7 @@ var result = await heos_lib
   .setPlayMode (pid, repeat, shuffle)
 var { pid, repeat, shuffle } = result
 ```
-_See 4.2.14 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.14 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 setPlayMode parameters:
 * [Player Identifier](#player-identifier)
@@ -370,7 +372,7 @@ setPlayMode parameters:
 var queue_data = await heos_lib.getQueue (pid, range)
 var { count, items } = queue_data
 ```
-_See 4.2.15 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.15 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getQueue parameters:
 * [Player Identifier](#player-identifier)
@@ -382,7 +384,7 @@ getQueue parameters:
 var result = await heos_lib.playQueueItem (pid, qid)
 var { pid, qid } = result
 ```
-_See 4.2.16 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.16 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playQueueItem parameters:
 * [Player Identifier](#player-identifier)
@@ -394,7 +396,7 @@ playQueueItem parameters:
 var result = await heos_lib.removeFromQueue (pid, qid)
 var { pid, qid } = result
 ```
-_See 4.2.17 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.17 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 remvoeFromQueue parameters:
 * [Player Identifier](#player-identifier)
@@ -406,7 +408,7 @@ remvoeFromQueue parameters:
 var result = await heos_lib.saveQueue (pid, name)
 var { pid, name } = result
 ```
-_See 4.2.18 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.18 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 saveQueue parameters:
 * [Player Identifier](#player-identifier)
@@ -418,7 +420,7 @@ saveQueue parameters:
 var result = await heos_lib.clearQueue (pid)
 var { pid } = result
 ```
-_See 4.2.19 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.19 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 clearQueue parameters:
 * [Player Identifier](#player-identifier)
@@ -429,7 +431,7 @@ clearQueue parameters:
 var result = await heos_lib.moveQueueItem (pid, sqid, dqid)
 var { pid, sqid, dqid } = result
 ```
-_See 4.2.20 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.20 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 moveQueueItem parameters:
 * [Player Identifier](#player-identifier)
@@ -446,7 +448,7 @@ Moving to a greater qid shifts items between the source qid and destination qid 
 var result = await heos_lib.playNext (pid)
 var { pid } = result
 ```
-_See 4.2.21 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.21 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playNext parameters:
 * [Player Identifier](#player-identifier)
@@ -457,7 +459,7 @@ playNext parameters:
 var result = await heos_lib.playPrevious (pid)
 var { pid } = result
 ```
-_See 4.2.22 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.2.22 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playPrevious parameters:
 * [Player Identifier](#player-identifier)
@@ -468,7 +470,7 @@ playPrevious parameters:
 var [ source_info ] = await heos_lib.getMusicSources ()
 var { name, type, sid } = source_info
 ```
-_See 4.4.1 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.1 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 ### getSourceInfo
 
@@ -476,7 +478,7 @@ _See 4.4.1 in [HEOS CLI Protocol Specification](#links) v1.13_
 var [ source_info ] = await heos_lib.getSourceInfo (sid)
 var { name, type, sid } = source_info
 ```
-_See 4.4.2 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.2 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getSourceInfo parameters:
 * [Source Identifier](#source-identifier)
@@ -488,7 +490,7 @@ var { count, items } = await heos_lib
   .browseSource (sid, range)
 var [{ name, type, cid }] = items
 ```
-_See 4.4.3 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.3 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 browseSource parameters:
 * [Source Identifier](#source-identifier)
@@ -501,7 +503,7 @@ var { count, items } = await heos_lib
   .browseSourceContainers (sid, cid, range)
 var [{ name, type, cid }] = items
 ```
-_See 4.4.4 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.4 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 browseSourceContainers parameters:
 * [Source Identifier](#source-identifier)
@@ -515,7 +517,7 @@ var criterias_list = await heos_lib
   .getSourceSearchCriteria (sid)
 var [{ name, scid, cid }] = criterias_list
 ```
-_See 4.4.5 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.5 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getSourceSearchCriteria parameters:
 * [Source Identifier](#source-identifier)
@@ -527,7 +529,7 @@ var { count, items } = await heos_lib
   .browseSearch (sid, search, scid, range)
 var [{ name, type, mid }] = items
 ```
-_See 4.4.6 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.6 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 browseSearch parameters:
 * [Source Identifier](#source-identifier)
@@ -544,7 +546,7 @@ var result = await heosLib
   .playStation (sid, cid, mid, pid, name)
 var { cid, cid, mid, pid, name } = result
 ```
-_See 4.4.7 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.7 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playStation parameters:
 * [Source Identifier](#source-identifier)
@@ -560,7 +562,7 @@ var preset = 1
 var result = await heos_lib.playPresetStation (pid, preset)
 var { pid, preset } = result
 ```
-_See 4.4.8 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.8 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playPresetStation parameters:
 * [Player Identifier](#player-identifier)
@@ -572,7 +574,7 @@ playPresetStation parameters:
 var result = await heos_lib.playInputSource (pid, input_name)
 var { pid, input } = result
 ```
-_See 4.4.9 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.9 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playInputSource parameters:
 * [Player Identifier](#player-identifier)
@@ -585,7 +587,7 @@ var result = await heos_lib
   .playInputSourceFrom (pid, spid, input_name)
 var { pid, spid, input } = result
 ```
-_See 4.4.9 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.9 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playInputSourceFrom parameters:
 * [Player Identifier](#player-identifier)
@@ -598,7 +600,7 @@ playInputSourceFrom parameters:
 var result = await heos_lib.playUrl (pid, url)
 var { pid, url } = result
 ```
-_See 4.4.10 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.10 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 playUrl parameters:
 * [Player Identifier](#player-identifier)
@@ -611,7 +613,7 @@ var result = await heos_lib
   .addContainerToQueue (sid, cid, aid, pid)
 var { sid, cid, aid, pid } = result
 ```
-_See 4.4.11 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.11 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 addContainerToQueue parameters
 * [Source Identifier](#source-identifier)
@@ -626,7 +628,7 @@ var result = await heos_lib
   .addTrackToQueue (sid, cid, mid, aid, pid)
 var { sid, cid, mid, aid, pid } = result
 ```
-_See 4.4.12 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.12 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 addTrackToQueue parameters
 * [Source Identifier](#source-identifier)
@@ -642,7 +644,7 @@ var { count, items } = await heos_lib
   .getHeosPlaylists (range)
 var [{ name, type, cid }] = items
 ```
-_See 4.4.13 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.13 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getHeosPlaylists parameter:
 * [Range Specifier](#range-specifier)
@@ -654,7 +656,7 @@ var result = await heos_lib
   .renameHeosPlaylist (sid, cid, name)
 var { sid, cid, name } = result
 ```
-_See 4.4.14 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.14 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 renameHeosPlaylist parameters:
 * [Source Identifier](#source-identifier)
@@ -668,7 +670,7 @@ var result = await heos_lib
   .deleteHeosPlaylist (sid, cid)
 var { sid, cid } = result
 ```
-_See 4.4.15 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.15 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 deleteHeosPlaylist parameters:
 * [Source Identifier](#source-identifier)
@@ -681,7 +683,7 @@ var { count, items } = await heos_lib
   .getHeosHistory (type, range)
 var [{ name, type, cid }] = items
 ```
-_See 4.4.16 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.16 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 getHeosHistory parameters:
 * *type* must be *tracks* or *stations*
@@ -693,7 +695,7 @@ getHeosHistory parameters:
 const { count, items } = await heos_lib
   .retrieveAlbumMetadata (sid, cid)
 ```
-_See 4.4.17 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.17 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 retrieveAlbumMetadata parameters:
 * [Source Identifier](#source-identifier)
@@ -708,7 +710,7 @@ const option = 11 // See HEOS protocol spec
 const { count, items } = await heos_lib
   .setServiceOption (sid, option, pid)
 ```
-_See 4.4.18 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 4.4.18 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 setServiceOption parameters:
 * [Source Identifier](#source-identifier)
@@ -727,7 +729,7 @@ heos_lib.command ({
   params:  { pid: 1234567890 }
 })
 ```
-_See 3.1 in [HEOS CLI Protocol Specification](#links) v1.13_
+_See 3.1 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
 
 Currently, the `command` method does not directly return a value. The result can be obtained with an event listener.
 
