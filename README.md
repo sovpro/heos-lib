@@ -18,7 +18,7 @@ const heos_lib = new HeosLib (socket, {timeout: 10000})
 
 ## Methods
 
-There are a number of [**Recurring Method Parameters**](#recurring-method-parameters)
+There are a number of [Recurring Method Parameters](#recurring-method-parameters)
 
 A list of methods:
 - [Register for Change Events](#registerforchangeevents)
@@ -87,7 +87,7 @@ A **pid** property value of an item returned by [getPlayers](#getplayers)
 
 #### Source Identifier
 
-A **sid** property value of an item returned by [getMusicSources](#getMusicSources), [browseSource](#browsesource)
+A **sid** property value of an item returned by [getMusicSources](#getmusicsources), [browseSource](#browsesource)
 
 #### Container Identifier
 
@@ -111,7 +111,7 @@ Identifiers that can be used vary by source. Identifiers other than provided by 
 
 #### Media Identifier
 
-A **mid** property value of an item returned by [browseSourceContainers](#browseSourceContainers), [browseSearch](#browseSearch)
+A **mid** property value of an item returned by [browseSourceContainers](#browsesourcecontainers), [browseSearch](#browsesearch)
 
 #### Add Criteria Identifier
 
@@ -124,7 +124,7 @@ A value available as static constants:
 
 #### Queue Item Identifier
 
-A **qid** property on an item returned by [getQueue](#getqueue).
+A **qid** property value on an item returned by [getQueue](#getqueue).
 
 #### Range Specifier
 
@@ -148,7 +148,7 @@ var { enable } = result
 _See 4.1.1 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 registerForChangeEvents parameters:
-* [**On Off State**](#on-off-state)
+* [On Off State](#on-off-state)
 
 ### checkAccount
 
@@ -178,8 +178,8 @@ catch (error) {
 _See 4.1.3 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 signIn parameters:
-* **username**
-* **password**
+* *username*
+* *password*
 
 ### signOut
 
@@ -222,7 +222,7 @@ var { name, pid, model, version } = player_info
 _See 4.2.2 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getPlayerInfo parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### getPlayState
 
@@ -233,7 +233,7 @@ var { state } = play_state
 _See 4.2.3 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getPlayState parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### setPlayState
 
@@ -245,8 +245,8 @@ var { pid, state } = result
 _See 4.2.4 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 setPlayState parameters:
-* [**Player Identifier**](#player-identifier)
-* **state** must be *play*, *pause*, or *stop*.
+* [Player Identifier](#player-identifier)
+* *state* must be *play*, *pause*, or *stop*.
 
 ### getNowPlayingMedia
 
@@ -258,7 +258,7 @@ var { type, song, artist } = now_playing
 _See 4.2.5 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getNowPlayingMedia parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### getVolume
 
@@ -268,7 +268,7 @@ var { pid, level } = await heos_lib.getVolume (pid)
 _See 4.2.6 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getVolume parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### setVolume
 
@@ -279,8 +279,8 @@ var { pid, level } = result
 _See 4.2.7 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 setVolume parameters:
-* [**Player Identifier**](#player-identifier)
-* **level**
+* [Player Identifier](#player-identifier)
+* *level*
 
 ### volumeUp
 
@@ -291,8 +291,8 @@ var { pid, step } = result
 _See 4.2.8 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 volumeUp parameters:
-* [**Player Identifier**](#player-identifier)
-* **step** must be in range 1 to 10; inclusive
+* [Player Identifier](#player-identifier)
+* *step* must be in range 1 to 10; inclusive
 
 ### volumeDown
 
@@ -303,8 +303,8 @@ var { pid, step } = result
 _See 4.2.9 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 volumeDown parameters:
-* [**Player Identifier**](#player-identifier)
-* **step** must be in range 1 to 10; inclusive
+* [Player Identifier](#player-identifier)
+* *step* must be in range 1 to 10; inclusive
 
 ### getMute
 
@@ -314,7 +314,7 @@ var { pid, state } = await heos_lib.getMute (pid)
 _See 4.2.10 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getMute parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### setMute
 
@@ -325,8 +325,8 @@ var { pid, state } = result
 _See 4.2.11 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 setMute parameters:
-* [**Player Identifier**](#player-identifier)
-* [**On Off State**](#on-off-state)
+* [Player Identifier](#player-identifier)
+* [On Off State](#on-off-state)
 
 ### toggleMute
 
@@ -337,7 +337,7 @@ var { pid } = result
 _See 4.2.12 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 toggleMute parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### getPlayMode
 
@@ -348,7 +348,7 @@ var { pid, repeat, shuffle } = play_mode
 _See 4.2.13 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getPlayMode parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### setPlayMode
 
@@ -360,9 +360,9 @@ var { pid, repeat, shuffle } = result
 _See 4.2.14 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 setPlayMode parameters:
-* [**Player Identifier**](#player-identifier)
-* **repeat** must be *off*, *on_one*, or *on_all*
-* **shuffle** must be *off* or *on*
+* [Player Identifier](#player-identifier)
+* *repeat* must be *off*, *on_one*, or *on_all*
+* *shuffle* must be *off* or *on*
 
 ### getQueue
 
@@ -373,8 +373,8 @@ var { count, items } = queue_data
 _See 4.2.15 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getQueue parameters:
-* [**Player Identifier**](#player-identifier)
-* [**Range Specifier**](#range-specifier)
+* [Player Identifier](#player-identifier)
+* [Range Specifier](#range-specifier)
 
 ### playQueueItem
 
@@ -385,8 +385,8 @@ var { pid, qid } = result
 _See 4.2.16 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playQueueItem parameters:
-* [**Player Identifier**](#player-identifier)
-* [**Queue Item Identifier**](#queue-item-identifier)
+* [Player Identifier](#player-identifier)
+* [Queue Item Identifier](#queue-item-identifier)
 
 ### removeFromQueue
 
@@ -397,8 +397,8 @@ var { pid, qid } = result
 _See 4.2.17 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 remvoeFromQueue parameters:
-* [**Player Identifier**](#player-identifier)
-* [**Queue Item Identifier**](#queue-item-identifier)
+* [Player Identifier](#player-identifier)
+* [Queue Item Identifier](#queue-item-identifier)
 
 ### saveQueue
 
@@ -409,8 +409,8 @@ var { pid, name } = result
 _See 4.2.18 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 saveQueue parameters:
-* [**Player Identifier**](#player-identifier)
-* **name**
+* [Player Identifier](#player-identifier)
+* *name*
 
 ### clearQueue
 
@@ -421,7 +421,7 @@ var { pid } = result
 _See 4.2.19 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 clearQueue parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### moveQueueItem
 
@@ -432,9 +432,9 @@ var { pid, sqid, dqid } = result
 _See 4.2.20 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 moveQueueItem parameters:
-* [**Player Identifier**](#player-identifier)
-* **sqid** (source queue item ID) is the [**Queue Item Identifier**](#queue-item-identifier) of the item to be moved
-* **dqid** (destination queue item ID) is the [**Queue Item Identifier**](#queue-item-identifier) at the location to move to.
+* [Player Identifier](#player-identifier)
+* *sqid* (source queue item ID) is the [Queue Item Identifier](#queue-item-identifier) of the item to be moved
+* *dqid* (destination queue item ID) is the [Queue Item Identifier](#queue-item-identifier) at the location to move to.
 
 Movement behavior
 
@@ -449,7 +449,7 @@ var { pid } = result
 _See 4.2.21 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playNext parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### playPrevious
 
@@ -460,7 +460,7 @@ var { pid } = result
 _See 4.2.22 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playPrevious parameters:
-* [**Player Identifier**](#player-identifier)
+* [Player Identifier](#player-identifier)
 
 ### getMusicSources
 
@@ -479,7 +479,7 @@ var { name, type, sid } = source_info
 _See 4.4.2 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getSourceInfo parameters:
-* [**Source Identifier**](#source-identifier)
+* [Source Identifier](#source-identifier)
 
 ### browseSource
 
@@ -491,8 +491,8 @@ var [{ name, type, cid }] = items
 _See 4.4.3 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 browseSource parameters:
-* [**Source Identifier**](#source-identifier)
-* [**Range Specifier**](#range-specifier)
+* [Source Identifier](#source-identifier)
+* [Range Specifier](#range-specifier)
 
 ### browseSourceContainers
 
@@ -504,9 +504,9 @@ var [{ name, type, cid }] = items
 _See 4.4.4 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 browseSourceContainers parameters:
-* [**Source Identifier**](#source-identifier)
-* [**Container Identifier**](#container-identifier)
-* [**Range Specifier**](#range-specifier)
+* [Source Identifier](#source-identifier)
+* [Container Identifier](#container-identifier)
+* [Range Specifier](#range-specifier)
 
 ### getSourceSearchCriteria
 
@@ -518,7 +518,7 @@ var [{ name, scid, cid }] = criterias_list
 _See 4.4.5 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getSourceSearchCriteria parameters:
-* [**Source Identifier**](#source-identifier)
+* [Source Identifier](#source-identifier)
 
 ### browseSearch
 
@@ -530,10 +530,10 @@ var [{ name, type, mid }] = items
 _See 4.4.6 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 browseSearch parameters:
-* [**Source Identifier**](#source-identifier)
-* **search**
-* [**Search Criteria Identifier**](#search-criteria-identifier)
-* [**Range Specifier**](#range-specifier)
+* [Source Identifier](#source-identifier)
+* *search*
+* [Search Criteria Identifier](#search-criteria-identifier)
+* [Range Specifier](#range-specifier)
 
 Properties of the returned items may vary depending on the source identifier and search criteria identifier parameters.
 
@@ -547,11 +547,11 @@ var { cid, cid, mid, pid, name } = result
 _See 4.4.7 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playStation parameters:
-* [**Source Identifier**](#source-identifier)
-* [**Container Identifier**](#container-identifier)
-* [**Media Identifier**](#media-identifier)
-* [**Player Identifierr**](#player-identifier)
-* **name** a name from an item returned from [browseSource](#browsesource), [browseSourceContaienrs](#browsesourcecontainers), [browseSearch](#browsesearch), or [getHeosFavorites](#getheosfavorites)
+* [Source Identifier](#source-identifier)
+* [Container Identifier](#container-identifier)
+* [Media Identifier](#media-identifier)
+* [Player Identifierr](#player-identifier)
+* *name* a name from an item returned from [browseSource](#browsesource), [browseSourceContaienrs](#browsesourcecontainers), [browseSearch](#browsesearch), or [getHeosFavorites](#getheosfavorites)
 
 ### playPresetStation
 
@@ -563,8 +563,8 @@ var { pid, preset } = result
 _See 4.4.8 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playPresetStation parameters:
-* [**Player Identifier**](#player-identifier)
-* **preset** is the name of an item from [**getHeosFavorites**](#getheosfavorites)
+* [Player Identifier](#player-identifier)
+* *preset* is the name of an item from [getHeosFavorites](#getheosfavorites)
 
 ### playInputSource
 
@@ -575,8 +575,8 @@ var { pid, input } = result
 _See 4.4.9 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playInputSource parameters:
-* [**Player Identifier**](#player-identifier)
-* [**Input Name**](#input-name)
+* [Player Identifier](#player-identifier)
+* [Input Name](#input-name)
 
 ### playInputSourceFrom
 
@@ -588,9 +588,9 @@ var { pid, spid, input } = result
 _See 4.4.9 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playInputSourceFrom parameters:
-* [**Player Identifier**](#player-identifier)
-* **spid** a source [**Player Identifier**](#player-identifier) to play music from
-* [**Input Name**](#input-name)
+* [Player Identifier](#player-identifier)
+* *spid* a source [Player Identifier](#player-identifier) to play music from
+* [Input Name](#input-name)
 
 ### playUrl
 
@@ -601,8 +601,8 @@ var { pid, url } = result
 _See 4.4.10 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 playUrl parameters:
-* [**Player Identifier**](#player-identifier)
-* **url**
+* [Player Identifier](#player-identifier)
+* *url*
 
 ### addContainerToQueue
 
@@ -614,10 +614,10 @@ var { sid, cid, aid, pid } = result
 _See 4.4.11 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 addContainerToQueue parameters
-* [**Source Identifier**](#source-identifier)
-* [**Container Identifier**](#container-identifier)
-* [**Add Criteria Identifier**](#add-criteria-identifier)
-* [**Player Identifier**](#player-identifier)
+* [Source Identifier](#source-identifier)
+* [Container Identifier](#container-identifier)
+* [Add Criteria Identifier](#add-criteria-identifier)
+* [Player Identifier](#player-identifier)
 
 ### addTrackToQueue
 
@@ -629,11 +629,11 @@ var { sid, cid, mid, aid, pid } = result
 _See 4.4.12 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 addTrackToQueue parameters
-* [**Source Identifier**](#source-identifier)
-* [**Container Identifier**](#container-identifier)
-* [**Media Identifier**](#media-identifier)
-* [**Add Criteria Identifier**](#add-criteria-identifier)
-* [**Player Identifier**](#player-identifier)
+* [Source Identifier](#source-identifier)
+* [Container Identifier](#container-identifier)
+* [Media Identifier](#media-identifier)
+* [Add Criteria Identifier](#add-criteria-identifier)
+* [Player Identifier](#player-identifier)
 
 ### getHeosPlaylists
 
@@ -659,7 +659,7 @@ _See 4.4.14 in [HEOS CLI Protocol Specification](#links) v1.13_
 renameHeosPlaylist parameters:
 * [Source Identifier](#source-identifier)
 * [Container Identifier](#container-identifier)
-* **name**
+* *name*
 
 ### deleteHeosPlaylist
 
@@ -684,7 +684,7 @@ var [{ name, type, cid }] = items
 _See 4.4.16 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 getHeosHistory parameters:
-* **type** must be *tracks* or *stations*
+* *type* must be *tracks* or *stations*
 * [Range Specifier](#range-specifier)
 
 ### retrieveAlbumMetadata
@@ -712,7 +712,7 @@ _See 4.4.18 in [HEOS CLI Protocol Specification](#links) v1.13_
 
 setServiceOption parameters:
 * [Source Identifier](#source-identifier)
-* **option** is an option identifier in [section 4.4.19 of the specification](#links) (v1.13)
+* *option* is an option identifier in [section 4.4.19 of the specification](#links) (v1.13)
 * [Player Identifier](#player-identifier)
 
 Options that require 'cid', 'mid' or 'name' are currently not supported by the setServiceOption method. The `command` method can be used as a workaround.
