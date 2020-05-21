@@ -64,6 +64,7 @@ A list of methods:
 - [Rename HEOS Playlist](#renameheosplaylist)
 - [Delete HEOS Playlist](#deleteheosplaylist)
 - [Get HEOS History](#getheoshistory)
+- [Get HEOS Favorites](#getheosfavorites)
 - [Retrieve Album Metadata](#retrievealbummetadata)
 - [Set Service Option](#setserviceoption)
 - [Command](#command)
@@ -756,6 +757,21 @@ _See 4.4.16 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of metho
 
 getHeosHistory parameters:
 * *type*: must be *tracks* or *stations*
+* *range*: [Range Specifier](#range-specifier)
+
+### getHeosFavorites
+
+```js
+var { count, items } = await heos_lib
+  .getHeosFavorites (range)
+// or:
+// var { count, items } = await heos_lib
+//   .getHeosFavorites ({ range })
+var [{ name, type }] = items
+```
+_See 4.4.3 and 1.1 in [HEOS CLI Protocol Specification](#links) v1.13. [^ list of methods](#methods)._
+
+getHeosFavorites parameters:
 * *range*: [Range Specifier](#range-specifier)
 
 ### retrieveAlbumMetadata
