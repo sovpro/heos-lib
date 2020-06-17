@@ -1,6 +1,6 @@
 {
   "name": "@sovpro/heos-lib",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A Node.js library for HEOS device interaction",
   "main": "heos-lib.js",
   "scripts": {
